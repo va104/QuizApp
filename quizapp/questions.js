@@ -1,0 +1,120 @@
+let questionsHTML = [
+    {
+        "question": "Was verstehst du unter HTML?",
+        "answer_1": "HTML beschreibt die Struktur einer Webseite",
+        "answer_2": "HTML ist die Standardauszeichnungssprache, die hauptsächlich zum Erstellen von Webseiten verwendet wird",
+        "answer_3": "HTML besteht aus einer Reihe von Elementen, die dem Browser helfen den Inhalt anzuzeigen",
+        "answer_4": "Alles ist richtig",
+        "right answer": 4,
+    },
+    {
+        "question": "Wer hat HTML erfunden?",
+        "answer_1": "Rasmus Lerdorf",
+        "answer_2": "Tim Berners-Lee",
+        "answer_3": "Brenda Eich",
+        "answer_4": "Sergej Brin",
+        "right answer": 2,
+    },
+    {
+        "question": "HTML steht für______?",
+        "answer_1": "HyperText Markup Language",
+        "answer_2": "HyperText Machine Language",
+        "answer_3": "HyperText Marking Language",
+        "answer_4": "HighText Marking Language",
+        "right answer": 1,
+    },
+    {
+        "question": "Womit wird eine HTML-Seite gelesen und gerendert?",
+        "answer_1": "Webserver",
+        "answer_2": "Web-Netzwerk",
+        "answer_3": "Webbrowser",
+        "answer_4": "Web-Matrix",
+        "right answer": 3,
+    },
+    {
+        "question": "Welches Tag wird verwendet, um die größte Überschrift in HTML einzufügen?",
+        "answer_1": "head",
+        "answer_2": "h1-Tag",
+        "answer_3": "h6-Tag",
+        "answer_4": "heading",
+        "right answer": 2,
+    },
+    {
+        "question": "HTML-Tags werden verwendent, um _____ zu beschreiben.",
+        "answer_1": "die Definition",
+        "answer_2": "den Seiteninhalt",
+        "answer_3": "die Sprache",
+        "answer_4": "das Model",
+        "right answer": 2,
+    },
+];
+
+let questionsCSS = [
+    {
+        "question": "Wie werden Kommentare in CSS hinzugefügt?",
+        "answer_1": "/* das ist ein Kommentar */",
+        "answer_2": "// das ist ein Kommentar //",
+        "answer_3": "// das ist ein Kommentar",
+        "answer_4": "<!-- das ist ein Kommentar-->",
+        "right answer": 1,
+    },
+    {
+        "question": "Mit welcher Eigenschaft wird die Textfarbe verändert?",
+        "answer_1": "fontcolor:",
+        "answer_2": "textcolor:",
+        "answer_3": "color:",
+        "answer_4": "font-color",
+        "right answer": 3,
+    },
+    {
+        "question": "Was ist der Inhalt eines Stylesheets?",
+        "answer_1": "Ersatzangaben für die font-Tags",
+        "answer_2": "Formatangaben zur Darstellung eines Webdokuments",
+        "answer_3": "Struktur der Website",
+        "answer_4": "Angaben, die verschiedene Inhalte der Website miteinander verbinden",
+        "right answer": 2,
+    }
+];
+
+let questionsJS = [
+    {
+        "question": "Wie lautet die korrekte JavaScript-Syntax, um den Inhalt des HTML-Elements zu ändern? <p id='demo'>Dies ist eine Demonstration.</p> ",
+        "answer_1": "#demo.innerHTML = 'Hello World!';",
+        "answer_2": "document.GetElement('p').innerHTML = 'Hello World!';",
+        "answer_3": "documet.getElementByID('demo').innerHTML = 'Hello World!'",
+        "answer_4": "Keine Antwort ist richtig",
+        "right answer": 4,
+    },
+    {
+        "question": "Mit welchem Tag wird eine JavaScript-Datei eingebunden?",
+        "answer_1": "<JavaScript></JavaScript>",
+        "answer_2": "<script></script>",
+        "answer_3": "<code></code>",
+        "answer_4": "<head></head>",
+        "right answer": 2,
+    },
+    {
+        "question": "Welche dieser Datentypen sind primitive Datentypen?",
+        "answer_1": "String",
+        "answer_2": "Number",
+        "answer_3": "Boolean",
+        "answer_4": "Alle Antworten sind richtig",
+        "right answer": 4,
+    },
+    {
+        "question": "Kann eine Funktion einer Variablen zugewiesen werden?",
+        "answer_1": "Ja",
+        "answer_2": "Nein",
+        "answer_3": "Es kommt auf den Scope der Variable an",
+        "answer_4": "Seit der neuen ECMAScript-Version von 2021 ist das nicht mehr möglich",
+        "right answer": 1,
+    },
+    {
+        "question": "Was ist das Ergebnis von 1 == '1'?",
+        "answer_1": "True",
+        "answer_2": "False",
+        "answer_3": "0",
+        "answer_4": "1",
+        "right answer": 1,
+    },
+];

@@ -1,5 +1,10 @@
 let currentQuestion = 0;
 let rightQuestion = 0;
+
+//one than more click per answer is not allowed
+//reset the variable to 0 after clicking an answer and reset to 1 for the next question
+let onlyOneAnwswer = 1;
+
 let AUDIO_SUCCESS = new Audio('audio/success.mp3');
 let AUDIO_FAIL = new Audio('audio/fail.mp3');
 let chosenQuiz = questionsHTML;
@@ -29,22 +34,26 @@ function gameIsOver() {
 }
 
 function answer(selection, idText) {
-    let question = chosenQuiz[currentQuestion];
-    let rightAnswer = `answer_${question['right answer']}`
-    if (rightAnwerSelected(selection, question)) {
-        document.getElementById(idText).parentNode.classList.add('bg-success');
-        document.getElementById(idText).previousElementSibling.style.backgroundColor = "rgb(85, 175, 134)";
-        AUDIO_SUCCESS.play();
-        rightQuestion++;
+    if (onlyOneAnwswer == 1) {
+        let question = chosenQuiz[currentQuestion];
+        let rightAnswer = `answer_${question['right answer']}`;
+        if (rightAnwerSelected(selection, question)) {
+            document.getElementById(idText).parentNode.classList.add('bg-success');
+            document.getElementById(idText).previousElementSibling.style.backgroundColor = "rgb(85, 175, 134)";
+            AUDIO_SUCCESS.play();
+            rightQuestion++;
+            onlyOneAnwswer = 0;
+        }
+        else {
+            document.getElementById(idText).parentNode.classList.add('bg-danger');
+            document.getElementById(idText).previousElementSibling.style.backgroundColor = "rgb(249, 134, 145)";
+            document.getElementById(rightAnswer).parentNode.classList.add('bg-success');
+            document.getElementById(rightAnswer).previousElementSibling.style.backgroundColor = "rgb(85, 175, 134)";
+            AUDIO_FAIL.play();
+            onlyOneAnwswer = 0;
+        }
+        document.getElementById('next-Button').disabled = false;
     }
-    else {
-        document.getElementById(idText).parentNode.classList.add('bg-danger');
-        document.getElementById(idText).previousElementSibling.style.backgroundColor = "rgb(249, 134, 145)";
-        document.getElementById(rightAnswer).parentNode.classList.add('bg-success');
-        document.getElementById(rightAnswer).previousElementSibling.style.backgroundColor = "rgb(85, 175, 134)";
-        AUDIO_FAIL.play();
-    }
-    document.getElementById('next-Button').disabled = false;
 }
 
 function rightAnwerSelected(selection, question) {
@@ -52,6 +61,7 @@ function rightAnwerSelected(selection, question) {
 }
 
 function nextQuestion() {
+    onlyOneAnwswer = 1;
     currentQuestion++;
     showQuestion();
     resetButtons();
@@ -122,7 +132,7 @@ function activeLink(activeLink) {
 }
 
 const navSlide = () => {
-//set Timeout because of loading error
+    //set Timeout because of loading error
     setTimeout(() => {
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.quiz-menu');
@@ -136,11 +146,11 @@ const navSlide = () => {
     }, 5000)
 };
 
-function closeNavSlide(){
+function closeNavSlide() {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.quiz-menu');
     nav.classList.remove('nav-active');
-    burger.classList.remove('toggle');    
+    burger.classList.remove('toggle');
 }
 
 navSlide();
